@@ -23,7 +23,14 @@ def run_all_benchmarks(base_dir: str | Path = ".") -> pd.DataFrame:
     polys_dir = results_dir / "polygons"
 
     print("1. Generowanie zestawów danych testowych LiDAR (.las) oraz referencji BDOT10k...")
-    dataset_pairs = generate_all_datasets(data_dir)
+    dataset_pairs = list(generate_all_datasets(data_dir))
+
+    real_dir = root / "data" / "real"
+    if real_dir.exists():
+        for real_las in sorted(real_dir.glob("*.las")):
+            real_ref = real_las.with_name(f"{real_las.stem}_BDOT10k.geojson")
+            if real_ref.exists():
+                dataset_pairs.append((real_las, real_ref))
 
     detectors = [
         detect_convex_hull,

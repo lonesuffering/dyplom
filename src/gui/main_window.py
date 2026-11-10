@@ -270,7 +270,11 @@ class ShorelineDetectionWindow(QMainWindow):
 
     def _populate_presets(self) -> None:
         synth_dir = self.project_root / "data" / "synthetic"
-        las_files = sorted(synth_dir.glob("*.las")) if synth_dir.exists() else []
+        real_dir = self.project_root / "data" / "real"
+        las_files = (
+            (sorted(real_dir.glob("*.las")) if real_dir.exists() else [])
+            + (sorted(synth_dir.glob("*.las")) if synth_dir.exists() else [])
+        )
         self.preset_paths: List[Path] = las_files
 
         self.cmb_preset.blockSignals(True)
@@ -280,8 +284,8 @@ class ShorelineDetectionWindow(QMainWindow):
         self.cmb_preset.blockSignals(False)
 
         if self.preset_paths:
-            # Default to Zbiornik_3_Roslinnosc_ZmiennaGestosc if available (most interesting showcase)
-            default_idx = len(self.preset_paths) - 1
+            # Default to GUGiK_1_Jezioro_Szmaragdowe if available
+            default_idx = 0
             self.cmb_preset.setCurrentIndex(default_idx)
             self._load_dataset_pair(self.preset_paths[default_idx])
 
@@ -488,8 +492,8 @@ class ShorelineDetectionWindow(QMainWindow):
 
         if met is not None:
             ax.set_title(
-                f"{res.method_name}\nIoU = {met.iou:.4f} | RMSE = {met.rmse_boundary_m:.2f} m | d_H = {met.hausdorff_dist_m:.2f} m",
-                fontsize=10,
+                f"{res.method_name}\nIoU={met.iou:.3f} | RMSE={met.rmse_boundary_m:.2f}m | d_H={met.hausdorff_dist_m:.1f}m",
+                fontsize=9.0,
                 fontweight="bold",
             )
         else:

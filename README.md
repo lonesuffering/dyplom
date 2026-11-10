@@ -39,15 +39,29 @@ Celem pracy jest analiza porównawcza metod wyznaczania linii brzegowej zbiornik
 | `Zbiornik_2_Nieregularny_Wyspa` | **Autorski Adaptive Alpha-Shape** | **0.9821** | **0.9910** | **0.50** | **1.47** | **+0.28%** | 387.6 |
 | `Zbiornik_3_Roslinnosc_ZmiennaGestosc` | **Convex Hull (Baseline)** | 0.8441 | 0.9155 | 5.58 | 9.10 | -11.09% | 154.7 |
 | `Zbiornik_3_Roslinnosc_ZmiennaGestosc` | **Metoda rastrowa (Grid 2m)** | 0.7835 | 0.8786 | 6.71 | 11.61 | -20.89% | 80.8 |
-| `Zbiornik_3_Roslinnosc_ZmiennaGestosc` | **Klasyczny Alpha-Shape ($\alpha=3.0\text{m}$)** | 0.8269 | 0.9052 | 6.46 | 22.24 | -10.87% | 194.6 |
-| `Zbiornik_3_Roslinnosc_ZmiennaGestosc` | **Autorski Adaptive Alpha-Shape** | **0.9880** | **0.9940** | **0.46** | **1.68** | **+0.12%** | 205.3 |
+| `Zbiornik_3_Roslinnosc_ZmiennaGestosc` | **Klasyczny Alpha-Shape ($\alpha=3.0\text{m}$)** | 0.8269 | 0.9052 | 6.46 | 22.24 | -10.87% | 140.8 |
+| `Zbiornik_3_Roslinnosc_ZmiennaGestosc` | **Autorski Adaptive Alpha-Shape** | **0.9880** | **0.9940** | **0.46** | **1.68** | **+0.12%** | 149.4 |
+| `GUGiK_1_Jezioro_Szmaragdowe` *(Szczecin)* | **Convex Hull (Baseline)** | 0.8407 | 0.9135 | 8.81 | 21.88 | -0.91% | 281.9 |
+| `GUGiK_1_Jezioro_Szmaragdowe` *(Szczecin)* | **Metoda rastrowa (Grid 2m)** | 0.7896 | 0.8824 | 8.84 | 24.45 | -21.04% | 95.8 |
+| `GUGiK_1_Jezioro_Szmaragdowe` *(Szczecin)* | **Klasyczny Alpha-Shape ($\alpha=3.0\text{m}$)** | 0.8291 | 0.9066 | 8.40 | 35.28 | +0.26% | 251.5 |
+| `GUGiK_1_Jezioro_Szmaragdowe` *(Szczecin)* | **Autorski Adaptive Alpha-Shape** | **0.9186** | **0.9576** | **4.32** | **16.35** | -3.82% | 278.9 |
+| `GUGiK_2_Staw_Brodowski` *(Szczecin)* | **Convex Hull (Baseline)** | 0.7804 | 0.8767 | 8.49 | 27.95 | -15.59% | 290.8 |
+| `GUGiK_2_Staw_Brodowski` *(Szczecin)* | **Metoda rastrowa (Grid 2m)** | 0.6843 | 0.8126 | 9.23 | 29.01 | -31.57% | 31.0 |
+| `GUGiK_2_Staw_Brodowski` *(Szczecin)* | **Klasyczny Alpha-Shape ($\alpha=3.0\text{m}$)** | 0.7267 | 0.8417 | 8.78 | 28.14 | -27.03% | 300.8 |
+| `GUGiK_2_Staw_Brodowski` *(Szczecin)* | **Autorski Adaptive Alpha-Shape** | **0.8734** | **0.9324** | **6.15** | **26.38** | **-11.40%** | 366.2 |
 
 ### Wizualizacja porównawcza
 
-#### 1. Zbiornik o złożonej linii brzegowej z wyspą (`Zbiornik_2_Nieregularny_Wyspa`)
+#### 1. Dane rzeczywiste GUGiK (Szczecin): Jezioro Szmaragdowe (`GUGiK_1_Jezioro_Szmaragdowe`)
+![Jezioro Szmaragdowe](results/plots/GUGiK_1_Jezioro_Szmaragdowe_porownanie.png)
+
+#### 2. Dane rzeczywiste GUGiK (Szczecin): Staw Brodowski (`GUGiK_2_Staw_Brodowski`)
+![Staw Brodowski](results/plots/GUGiK_2_Staw_Brodowski_porownanie.png)
+
+#### 3. Zbiornik o złożonej linii brzegowej z wyspą (`Zbiornik_2_Nieregularny_Wyspa`)
 ![Zbiornik 2](results/plots/Zbiornik_2_Nieregularny_Wyspa_porownanie.png)
 
-#### 2. Zbiornik z roślinnością przybrzeżną i zmienną gęstością punktów (`Zbiornik_3_Roslinnosc_ZmiennaGestosc`)
+#### 4. Zbiornik z roślinnością przybrzeżną i zmienną gęstością punktów (`Zbiornik_3_Roslinnosc_ZmiennaGestosc`)
 ![Zbiornik 3](results/plots/Zbiornik_3_Roslinnosc_ZmiennaGestosc_porownanie.png)
 
 ---

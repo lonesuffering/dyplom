@@ -12,9 +12,7 @@ __pycache__/
 .ruff_cache/
 
 # Raw external GUGiK tiles (too large for git)
-data/raw/*.las
-data/raw/*.laz
-data/raw/*.zip
+data/raw/
 
 # OS & IDE files
 .DS_Store
