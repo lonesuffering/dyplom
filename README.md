@@ -52,6 +52,20 @@ Celem pracy jest analiza porównawcza metod wyznaczania linii brzegowej zbiornik
 
 ---
 
+## Graficzny interfejs użytkownika (GUI — Rozdział 4.3 i 5.3)
+
+Aplikacja okienkowa zbudowana w oparciu o **PyQt6** oraz interaktywne płótno **Matplotlib (`FigureCanvasQTAgg`)** umożliwia:
+- wczytywanie chmur punktów `.las`/`.laz` oraz warstw referencyjnych `BDOT10k` (`.geojson`, `.shp`, `.gpkg`),
+- interaktywne sterowanie parametrami filtracji hydro-LiDAR ($\Delta Z$, próg intensywności) oraz adaptacyjnego doboru promienia $\alpha_{\text{local}}(T)$ ($k$-NN, $c_\alpha$),
+- pracę w trybie pojedynczego algorytmu lub w trybie porównawczym **2x2 (wszystkie 4 metody jednocześnie)** wraz z tabelą metryk (**IoU**, **F1**, **RMSE**, **Hausdorff $d_H$**),
+- bezpośredni eksport wyznaczonej linii brzegowej do formatów GIS (`GeoJSON`, `Shapefile`, `GeoPackage`) na potrzeby aktualizacji bazy **BDOT10k**.
+
+![GUI Widok Pojedynczy](results/plots/GUI_widok_autorski_adaptive.png)
+
+![GUI Widok Porównawczy 2x2](results/plots/GUI_widok_porownanie_4_metod.png)
+
+---
+
 ## Struktura projektu
 
 - `src/domain/models.py` — modele danych dla chmur punktów ASPRS LAS 1.4 (`EPSG:2180`), wyników detekcji oraz metryk.
@@ -66,5 +80,10 @@ Celem pracy jest analiza porównawcza metod wyznaczania linii brzegowej zbiornik
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
+
+# 1. Uruchomienie potoku badawczego (CLI / benchmark):
 .venv/bin/python run_benchmark.py
+
+# 2. Uruchomienie aplikacji graficznej (GUI PyQt6):
+.venv/bin/python run_gui.py
 ```

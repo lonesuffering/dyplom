@@ -4,3 +4,4 @@ shapely>=2.0.0
 laspy[lazrs]>=2.5.0
 matplotlib>=3.7.0
 geopandas>=0.13.0
+PyQt6>=6.5.0
